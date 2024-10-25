@@ -193,6 +193,8 @@ dependencies {
     } else {
         implementation jscFlavor
     }
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.6")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.6")
 }
 
 if (rnVersion < versionToNumber(0, 75, 0)) {
