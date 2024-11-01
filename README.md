@@ -31,6 +31,8 @@ First, require the `LineLogin` module:
 
 ```javascript
 import LineLogin from 'expo-line-authentication'
+
+ExpoLineModule.setup({channelID: '1234567890'})
 ```
 
 Then, you can start using all the functions that are available:

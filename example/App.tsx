@@ -1,18 +1,11 @@
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, View } from 'react-native';
 
 import * as ExpoLineModule from 'expo-line-authentication';
-import { LoginPermission } from 'expo-line-authentication/ExpoLineModule.types';
-import { useEffect } from 'react';
+ExpoLineModule.setup({channelID: 'YOUR_CHANNEL_ID'})
 
 export default function App() {
-  useEffect(() => {
-    ExpoLineModule.setup({channelID: '2006494257'})
-  }, [])
-
   const login = async () => {
-    const result = await ExpoLineModule.login({
-      scopes: ['email', 'openid', 'profile'] as LoginPermission[]
-    })
+    const result = await ExpoLineModule.login()
     console.log(result)
   }
 
