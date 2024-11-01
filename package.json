@@ -1,6 +1,6 @@
 {
   "name": "expo-line-authentication",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Line SDK wrapper for Expo 🚀",
   "main": "build/index.js",
   "types": "build/index.d.ts",
