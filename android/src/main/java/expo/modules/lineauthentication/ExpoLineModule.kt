@@ -25,12 +25,17 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
+class SetupProps: Record {
+  @Field
+  val channelID: String = ""
+}
+
 class LoginProps : Record {
   @Field
   val scopes: List<String>? = null
 
   @Field
-  val onlyWebLogin: Boolean? = false
+  val onlyWebLogin: Boolean = false
 
   @Field
   val botPrompt: String? = null
@@ -51,19 +56,11 @@ class ExpoLineModule : Module() {
   private val currentActivity
     get() = appContext.currentActivity ?: throw Exceptions.MissingActivity()
 
-  // Each module class must implement the definition function. The definition consists of components
-  // that describes the module's functionality and behavior.
-  // See https://docs.expo.dev/modules/module-api for more details about available components.
   override fun definition() = ModuleDefinition {
-    // Sets the name of the module that JavaScript code will use to refer to the module. Takes a string as an argument.
-    // Can be inferred from module's class name, but it's recommended to set it explicitly for clarity.
-    // The module will be accessible from `requireNativeModule('ExpoLineModule')` in JavaScript.
     Name("ExpoLineModule")
 
     OnCreate {
       context = appContext.reactContext ?: throw Exceptions.ReactContextLost()
-      channelId = context.getString(R.string.line_channel_id)
-      lineApiClient = LineApiClientBuilder(context, channelId).build()
     }
 
     OnActivityResult { _, (requestCode, resultCode, data) ->
@@ -78,12 +75,19 @@ class ExpoLineModule : Module() {
       }
     }
 
+    Function("setup") {
+        options: SetupProps
+      ->
+      channelId = options.channelID
+      lineApiClient = LineApiClientBuilder(context, channelId).build()
+    }
+
     AsyncFunction("login") {
       options: LoginProps,
       promise: Promise
        ->
       val scopesFormat = if (options.scopes.isNullOrEmpty()) listOf("profile") else options.scopes.toList()
-      val onlyWebLoginFormat = options.onlyWebLogin.let { options.onlyWebLogin}
+      val onlyWebLoginFormat = options.onlyWebLogin
       val botPromptString = if (options.botPrompt.isNullOrEmpty()) "normal" else options.botPrompt
       login(
         scopesFormat,
