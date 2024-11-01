@@ -19,47 +19,6 @@ First, install the npm package with yarn. _Autolink_ is automatic.
 
 ### iOS Setup
 
-#### Using Objective-C
-
-Inside your `AppDelegate.m`, setup the line sdk by passing the channel id obtained.
-
-1. Add `platform :ios, '11.0'` in `Podfile` line:1
-2. Modify your info.plist like it says here [Configuring the Info.plist file](https://developers.line.biz/en/docs/line-login-sdks/ios-sdk/swift/setting-up-project/#config-infoplist-file)
-3. Change your `AppDelegate.m` to match the following:
-
-```objc
-// AppDelegate.m
-
-//
-// Import the Library
-//
-#import "RNLine-Swift.h"
-
-//
-// Setup the plugin using your CHANNEL_ID when the app finishes launching
-//
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    [LineLogin setupWithChannelID:@"YOUR_CHANNEL_ID" universalLinkURL:nil];
-}
-
-//
-// Handle redirection back to the app from Line
-//
-- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
-{
-  return [LineLogin application:app open:url options:options];
-}
-
-- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> * _Nullable))restorationHandler
-{
-  BOOL handledLine = [LineLogin application:application continue:userActivity restorationHandler:restorationHandler];
-  return handledLine;
-}
-```
-
-#### Using Swift
-
 1. Follow instructions in [Integrating LINE Login with your iOS app](https://developers.line.biz/en/docs/ios-sdk/swift/integrate-line-login/).
 
 ### Android Setup
