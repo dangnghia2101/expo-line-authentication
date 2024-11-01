@@ -4,10 +4,10 @@ import { NativeModulesProxy, EventEmitter, Subscription } from 'expo-modules-cor
 // and on native platforms to ExpoLineModule.ts
 import ExpoLineModule from './ExpoLineModule';
 import ExpoLineModuleView from './ExpoLineModuleView';
-import { ChangeEventPayload, ExpoLineLoginProps, ExpoLineModuleViewProps } from './ExpoLineModule.types';
+import { ChangeEventPayload, LineLoginProps, ExpoLineModuleViewProps, SetupLineLoginProps } from './ExpoLineModule.types';
 
 
-export async function login(args:ExpoLineLoginProps = {}) {
+export async function login(args: LineLoginProps = {}) {
   return await ExpoLineModule.login(args);
 }
 
@@ -35,10 +35,14 @@ export async function verifyAccessToken() {
   return await ExpoLineModule.verifyAccessToken();
 }
 
+export async function setup(args: SetupLineLoginProps) {
+  return await ExpoLineModule.setup(args);
+}
+
 const emitter = new EventEmitter(ExpoLineModule ?? NativeModulesProxy.ExpoLineModule);
 
 export function addChangeListener(listener: (event: ChangeEventPayload) => void): Subscription {
   return emitter.addListener<ChangeEventPayload>('onChange', listener);
 }
 
-export { ExpoLineModuleView, ExpoLineModuleViewProps, ChangeEventPayload, ExpoLineLoginProps};
+export { ExpoLineModuleView, ExpoLineModuleViewProps, ChangeEventPayload, LineLoginProps};

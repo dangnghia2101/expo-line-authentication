@@ -6,10 +6,15 @@ export type ExpoLineModuleViewProps = {
   name: string;
 };
 
-export type ExpoLineLoginProps = {
+export type LineLoginProps = {
   scopes?: LoginPermission[]
   onlyWebLogin?: boolean
   botPrompt?: BotPrompt
+}
+
+export type SetupLineLoginProps = {
+  channelID: String,
+  universalLinkURL?: URL
 }
 
 export enum LoginPermission {

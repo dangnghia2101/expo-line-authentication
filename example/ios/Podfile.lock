@@ -15,6 +15,7 @@ PODS:
     - ExpoModulesCore
   - ExpoLineModule (0.1.0):
     - ExpoModulesCore
+    - LineSDKSwift (~> 5.0)
   - ExpoModulesCore (1.12.26):
     - DoubleConversion
     - glog
@@ -44,6 +45,9 @@ PODS:
   - hermes-engine (0.74.5):
     - hermes-engine/Pre-built (= 0.74.5)
   - hermes-engine/Pre-built (0.74.5)
+  - LineSDKSwift (5.11.2):
+    - LineSDKSwift/Core (= 5.11.2)
+  - LineSDKSwift/Core (5.11.2)
   - RCT-Folly (2024.01.01.00):
     - boost
     - DoubleConversion
@@ -1272,6 +1276,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - LineSDKSwift
     - SocketRocket
 
 EXTERNAL SOURCES:
@@ -1410,12 +1415,13 @@ SPEC CHECKSUMS:
   ExpoFileSystem: 80bfe850b1f9922c16905822ecbf97acd711dc51
   ExpoFont: 00756e6c796d8f7ee8d211e29c8b619e75cbf238
   ExpoKeepAwake: 3b8815d9dd1d419ee474df004021c69fdd316d08
-  ExpoLineModule: 8d9e044e39b06d1666012d12bc1510b2c8f80963
+  ExpoLineModule: 3442d97815be824ee9f78cdbd25aaa56e77686b4
   ExpoModulesCore: 831ece8311a489418746925820bbffdda587d6f4
   FBLazyVector: ac12dc084d1c8ec4cc4d7b3cf1b0ebda6dab85af
   fmt: 4c2741a687cc09f0634a2e2c72a838b99f1ff120
   glog: fdfdfe5479092de0c4bdbebedd9056951f092c4f
   hermes-engine: 8c1577f3fdb849cbe7729c2e7b5abc4b845e88f8
+  LineSDKSwift: 3ecc2bce45c76a51a158e8d39ab49d5d5b3f1503
   RCT-Folly: 02617c592a293bd6d418e0a88ff4ee1f88329b47
   RCTDeprecation: 3afceddffa65aee666dafd6f0116f1d975db1584
   RCTRequired: ec1239bc9d8bf63e10fb92bd8b26171a9258e0c1

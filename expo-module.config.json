@@ -1,7 +1,8 @@
 {
   "platforms": ["ios", "tvos", "android", "web"],
   "ios": {
-    "modules": ["ExpoLineModule"]
+    "modules": ["ExpoLineModule"],
+    "appDelegateSubscribers": ["AppLifecycleDelegate"]
   },
   "android": {
     "modules": ["expo.modules.lineauthentication.ExpoLineModule"]

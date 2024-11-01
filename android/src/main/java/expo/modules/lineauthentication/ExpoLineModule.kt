@@ -30,7 +30,7 @@ class LoginProps : Record {
   val scopes: List<String>? = null
 
   @Field
-  val onlyWebLogin: Boolean = false
+  val onlyWebLogin: Boolean? = false
 
   @Field
   val botPrompt: String? = null
