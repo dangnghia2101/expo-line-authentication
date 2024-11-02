@@ -1,7 +1,7 @@
 # ![React Native LINE](/assets/github-banner.png)
 
 <p align="center">
-  Line SDK wrapper for EXPO (IOS, ANDROID) 🚀
+  Line SDK wrapper for Expo (Ios, Android) 🚀
 </p>
 
 This library includes:
@@ -11,7 +11,7 @@ This library includes:
 
 ## Installation
 
-First, install the npm package with yarn. _Autolink_ is automatic.
+First, install the npm package with npx.
 
 ```bash
   npx expo install expo-line-authentication
@@ -228,6 +228,9 @@ If you want to see `expo-line-authentication` in action, just move into the [exa
 <!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
+
+## Resourceful Projects 🌟
+- [react-native-line](https://github.com/xmartlabs/react-native-line)
 
 ## License
 
