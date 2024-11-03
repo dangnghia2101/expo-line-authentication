@@ -1,6 +1,6 @@
 {
   "name": "expo-line-authentication",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Line SDK wrapper for Expo 🚀",
   "main": "build/index.js",
   "types": "build/index.d.ts",
@@ -19,7 +19,10 @@
     "react-native",
     "expo",
     "expo-line-authentication",
-    "ExpoLineModule"
+    "ExpoLineModule",
+    "auth",
+    "line-authentication",
+    "sign-in-with-line"
   ],
   "repository": "https://github.com/dangnghia2101/expo-line-authentication",
   "bugs": {

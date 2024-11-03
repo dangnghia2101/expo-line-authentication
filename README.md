@@ -27,12 +27,12 @@ First, install the npm package with npx.
 
 ## API
 
-First, require the `LineLogin` module:
+First, require the `ExpoLineModule` module:
 
 ```javascript
-import LineLogin from 'expo-line-authentication'
+import * as Line from 'expo-line-authentication';
 
-ExpoLineModule.setup({channelID: '1234567890'})
+Line.setup({channelID: 'YOUR-CHANNEL-ID'});
 ```
 
 Then, you can start using all the functions that are available:
